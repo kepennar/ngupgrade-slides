@@ -1,1 +1,0 @@
-<!-- .slide: data-background="url(images/slides/victory.jpg) no-repeat center" data-background-size="contain"-->
