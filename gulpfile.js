@@ -32,9 +32,11 @@ gulp.task('template', function() {
     }
   };
 
-  gulp.src(paths.template)
+  return gulp.src(paths.template)
   .pipe($.template(templatingData))
-  .pipe(gulp.dest(paths.tmp));
+  .pipe(gulp.dest(paths.tmp))
+  .pipe($.size({title: path.join(paths.tmp, '/'), showFiles: true}));
+
 });
 
 /* *** Style *** */
@@ -51,8 +53,17 @@ gulp.task('watch', function() {
   gulp.watch(path.join(paths.src, '**/*.{md,json}'), ['template']).on('change', browserSync.reload);
 });
 
-gulp.task('images', function() {
+/* *** Copy *** */
+gulp.task('copy:images', function() {
   return gulp.src(path.join(paths.images, '/**/*.*'))
+  .pipe(gulp.dest(path.join(paths.dist, 'images')))
+  .pipe($.size({title: path.join(paths.dist, '/images'), showFiles: true}));
+});
+
+gulp.task('copy:md', function() {
+  return gulp.src(path.join(paths.src, '/**/*.md'))
+  .pipe(gulp.dest(path.join(paths.dist, 'slides')))
+  .pipe($.size({title: path.join(paths.dist, '/slides'), showFiles: true}));
 })
 
 /* *** Browser sync *** */
@@ -126,7 +137,7 @@ gulp.task('test:dist', function(done) {
 gulp.task('build', function(done) {
   runSequence(
     'clean',
-    ['style', 'images', 'template'],
+    ['style', 'copy:images', 'copy:md', 'template'],
     'html',
     done);
 });
