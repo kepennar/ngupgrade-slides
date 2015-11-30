@@ -51,8 +51,13 @@ gulp.task('watch', function() {
   gulp.watch(path.join(paths.src, '**/*.{md,json}'), ['template']).on('change', browserSync.reload);
 });
 
-gulp.task('images', function() {
-  return gulp.src(path.join(paths.images, '/**/*.*'))
+gulp.task('copy', function() {
+  return gulp.src([
+    path.join(paths.images, '/**/*.*'),
+    path.join(paths.src, '/**/*.md'),
+  ])
+  .pipe(gulp.dest(paths.dist))
+  .pipe($.size({title: path.join(paths.dist, '/'), showFiles: true}));
 })
 
 /* *** Browser sync *** */
@@ -126,7 +131,7 @@ gulp.task('test:dist', function(done) {
 gulp.task('build', function(done) {
   runSequence(
     'clean',
-    ['style', 'images', 'template'],
+    ['style', 'copy', 'template'],
     'html',
     done);
 });
