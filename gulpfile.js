@@ -24,11 +24,12 @@ var paths = {
 gulp.task('template', function() {
   var slides = JSON.parse(fs.readFileSync(path.join(paths.src, 'list.json')));
   var sectionTemplate = fs.readFileSync('src/templates/_section.html');
-
   var templatingData = {
     slides: slides,
     section: function(slide, isTitle) {
-      return _.template(sectionTemplate.toString(), {slide: slide, isTitle: !!isTitle});
+      var cpte = _.template(sectionTemplate.toString())({slide: slide, isTitle: !!isTitle});
+      console.log(cpte);
+      return cpte;
     }
   };
 
