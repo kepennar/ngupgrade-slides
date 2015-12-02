@@ -49,6 +49,9 @@ section.has-light-background {
 @import "../../../bower_components/reveal.js/css/theme/template/theme";
 // ---------------------------------------------
 
+.reveal section img {
+  max-width: 600px;
+}
 
 
 // /*********************************************
@@ -74,25 +77,44 @@ section.has-light-background {
     text-shadow: 1px 1px 1px #111;
   }
   .subtitle {
-   display: flex;
-   align-items: center;
-   justify-content: center;
+     display: flex;
+     align-items: center;
+     justify-content: center;
 
-   color: #C3C3C3;
-   font-size: 1.5em;
+     color: #C3C3C3;
+     font-size: 1.5em;
 
-   img {
-    margin: 0;
-   }
-   .angular-version {
-      align-self: flex-start;
-      font-size: 2em;
-      color: #EEE;
-    }
+     img {
+      margin: 0;
+     }
+     .angular-version {
+        align-self: flex-start;
+        font-size: 2em;
+        color: #EEE;
+      }
+  }
+  img {
+    background: none;
+    border: none;
+    box-shadow: none; 
+  }
 }
-img {
-  background: none;
-  border: none;
-  box-shadow: none; 
+
+.incrementale-arrow-one {
+    position: absolute;
+    top: -115px;
+    left: 100px;
+    width: 100px;
 }
+.incrementale-arrow-two {
+    position: absolute;
+    top: 120px;
+    left: 100px;
+    width: 100px;
+}
+.incrementale-arrow-three {
+    position: absolute;
+    top: 120px;
+    right : 150px;
+    width: 100px;
 }

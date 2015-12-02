@@ -8,7 +8,18 @@
     ],
     [
       "approches/01-comment.md",
-      "approches/02-incremental-up.md",
-      "approches/03-incremental-down.md"
+      "approches/02-bigbang.md",
+      "approches/02b-bigbang.md",
+      "approches/03-incrementale.md"
+    ],
+    [
+      "ngupgrade/01-ngupgrade.md",
+      "ngupgrade/02-interet.md",
+      "ngupgrade/03-incremental-down.md",
+      "ngupgrade/04-incremental-up.md"
+    ],
+    [
+      "ngforward/01-forward.md",
+      "ngforward/02-example.md"
     ]
 ] 

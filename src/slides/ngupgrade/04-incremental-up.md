@@ -1,5 +1,4 @@
-<!-- .slide: data-background="#8BC34A" -->
-
+## ngUpgrade
 Upgrade composants angular 1 dans angular 2 
 ```js
 @Component({

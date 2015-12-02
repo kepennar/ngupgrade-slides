@@ -1,5 +1,4 @@
-<!-- .slide: data-background="#8BC34A" -->
-
+## ngUpgrade
 Downgrade composants angular 2 dans angular 1 
 ```js
 // Downgrade du composant Ng2 dans un module Angular 1
