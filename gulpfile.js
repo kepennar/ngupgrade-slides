@@ -28,7 +28,6 @@ gulp.task('template', function() {
     slides: slides,
     section: function(slide, isTitle) {
       var cpte = _.template(sectionTemplate.toString())({slide: slide, isTitle: !!isTitle});
-      console.log(cpte);
       return cpte;
     }
   };

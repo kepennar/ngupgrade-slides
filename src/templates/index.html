@@ -14,7 +14,7 @@
         <!-- build:css({.,.tmp}) styles/main.css -->
         <link rel="stylesheet" href="bower_components/reveal.js/css/reveal.css">    
         <link rel="stylesheet" href="theme.css" id="theme">
-        <link rel="stylesheet" href="bower_components/highlightjs/styles/zenburn.css">
+        <link rel="stylesheet" href="bower_components/highlightjs/styles/github-gist.css">
         <link rel="stylesheet" href="bower_components/reveal.js/lib/font/source-sans-pro/source-sans-pro.css">
         <!-- endbuild -->
 
@@ -56,7 +56,6 @@
         <script src="bower_components/reveal.js/plugin/markdown/marked.js"></script>
         <script src="bower_components/reveal.js/plugin/markdown/markdown.js"></script>
         <script src="bower_components/reveal.js/plugin/highlight/highlight.js"></script>
-        <script src="bower_components/reveal.js/plugin/highlight/highlight.js"></script>
         <script src="bower_components/reveal.js/plugin/zoom-js/zoom.js" async></script>
         <script src="bower_components/reveal.js/plugin/notes/notes.js" async></script>
         <script src="js/loadhtmlslides.js"></script>
@@ -74,7 +73,10 @@
 
             transition: 'slide', // none/fade/slide/convex/concave/zoom
           });
-
+          var hljsNodes = document.querySelectorAll( 'pre code' );
+            for( var i = 0, len = hljsNodes.length; i < len; i++ ) {
+                hljs.highlightBlock(hljsNodes[i]);
+            }
         </script>
     </body>
 
